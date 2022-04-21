@@ -19,8 +19,13 @@ img{
     position: relative;
 }
 
-.panorama img{
-    height: 400px;
+
+
+.heroImage img{
+    width: 800px;
+    height: 350px;
+    object-fit: cover;
+   
 }
 
 .thumbnails{ 
@@ -30,7 +35,7 @@ img{
 
 .thumbnails .thumb{ 
 
-    height: 80px; 
+    height: 70px; 
 
 } 
 
@@ -38,7 +43,35 @@ img{
     display: flex;
     justify-content: space-between;
     position: absolute;
-    right: 10%;
-    height: 400px;
+    right: 7.5%;
+    height: 350px;
     flex-direction: column;
+    padding: 7px 0;
 } 
+
+.thumb{
+    filter: brightness(0.4);
+}
+
+.active{ 
+    outline: 2px solid lightgrey;
+    outline-offset: -2px;
+    filter: none;
+}
+
+
+.fa-chevron-up, .fa-chevron-down {
+    border-radius: 100%;
+    background-color: lightgray;
+    padding: 3px;
+    margin: 0 -3px;
+}
+
+.placeDetails{
+    text-align:end;
+    position: absolute;
+    bottom:10%;
+    right: 20%;
+    color:aliceblue
+
+}

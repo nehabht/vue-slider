@@ -14,21 +14,27 @@
     <div id="app">
         <div class="container">
             <div class="card panorama">
-                <img :src="places[0].image" alt="">
+                <div class="heroImage">
+                    <img :src="places[activeImage].image" alt="">
+                </div>
 
                 <div class="thumbnails">
-
                     <img :src="places[index].image" class="thumb" :class="activeImage === index ? 'active' : '' "
-                    v-for="(image, index) in places" />
+                    v-for="(image, index) in places">
                 </div>
 
                 <div class="navigator">
-                    <div class="prev">
-                        <i class="fas fa-chevron-up    "></i> 
+                    <div class="prev" @click="prevImage">
+                        <i class="fa-solid fa-chevron-up"></i>
                     </div>
-                    <div class="next">
-                        <i class="fas fa-chevron-down    "></i>
+                    <div class="next" @click="nextImage">
+                        <i class="fa-solid fa-chevron-down"></i>
                     </div>
+                </div>
+
+                <div class="placeDetails">
+                    <h3>{{places[activeImage].title}}</h3>
+                    <span>{{places[activeImage].text}}</span>
                 </div>
 
 
