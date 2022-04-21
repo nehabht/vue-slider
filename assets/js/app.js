@@ -33,11 +33,13 @@ const app = new Vue({
             
             
         ],
+        //impostando inizialmente un timer di zero
         timer: null,
         
 
     },
 
+    //fa partire lo slideshow
     mounted: function() {
         this.startSlide();
     },
@@ -60,10 +62,20 @@ const app = new Vue({
         },
 
 
-
+        //per timer slideshow ogni 3 secondi
         startSlide: function() {
             this.timer = setInterval(this.nextImage, 3000);
         },
+
+        //indice è il parametro non l'indice che c'è in html 
+        makeHero(indice){
+            
+            document.querySelector(".showingImage").src = this.places[indice].image
+            console.log(this.places[indice].image)
+            
+        }
+
+        
 
         
     },
@@ -74,6 +86,8 @@ const app = new Vue({
     }
 
 })
+
+
 
 
 

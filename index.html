@@ -15,11 +15,11 @@
         <div class="container">
             <div class="card panorama">
                 <div class="heroImage">
-                    <img :src="places[activeImage].image" alt="">
+                    <img class="showingImage" :src="places[activeImage].image" alt="">
                 </div>
 
                 <div class="thumbnails">
-                    <img :src="places[index].image"  class="thumb" :class="activeImage === index ? 'active' : '' "
+                    <img :src="places[index].image" @click="makeHero(index)" class="thumb" :class="activeImage === index ? 'active' : '' "
                     v-for="(image, index) in places">
                 </div>
 
