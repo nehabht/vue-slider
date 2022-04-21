@@ -7,3 +7,38 @@ img{
     max-width: 100%; 
 } 
 
+.container{    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+} 
+
+.card{
+    display: flex;
+    position: relative;
+}
+
+.panorama img{
+    height: 400px;
+}
+
+.thumbnails{ 
+    display: flex; 
+    flex-direction: column;
+} 
+
+.thumbnails .thumb{ 
+
+    height: 80px; 
+
+} 
+
+.navigator{ 
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    right: 10%;
+    height: 400px;
+    flex-direction: column;
+} 
