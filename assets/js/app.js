@@ -32,8 +32,14 @@ const app = new Vue({
             }
             
             
-        ]
+        ],
+        timer: null,
+        
 
+    },
+
+    mounted: function() {
+        this.startSlide();
     },
 
     methods:{
@@ -51,9 +57,20 @@ const app = new Vue({
             if(this.activeImage === this.places.length){
                 this.activeImage = 0;
             }
-        }
+        },
+
+
+
+        startSlide: function() {
+            this.timer = setInterval(this.nextImage, 3000);
+        },
 
         
+    },
+    computed: {
+        currentImg: function() {
+          return this.places[this.activeImage % this.places.length];
+        }
     }
 
 })
@@ -78,3 +95,9 @@ l'immagine attiva diventa visibile in formato grande a sinistra
 e nel suo angolo in basso a destra dovranno essere aggiunti i relativi: - titolo e - testo.
 Allo stesso tempo nelle miniature l'immagine attiva dovrà apparire in evidenza rispetto alle altre.
  */
+
+
+/* Bonus:
+1- al click su una thumb, visualizzare in grande l'immagine corrispondente
+2- applicare l'autoplay allo slider: ogni 3 secondi, cambia immagine automaticamente
+3- quando il mouse va in hover sullo slider, bloccare l'autoplay e farlo riprendere quando esce */
